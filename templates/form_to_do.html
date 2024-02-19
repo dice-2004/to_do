@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/test.css">
+</head>
+<body>
+    <h1>登録</h1>
+    <form method="POST">
+        {% if passs == 0 %}
+        <h1 style="color: red;">パスキーが違います</h1>
+        {% endif %}
+        <label for="event">イベント　</label>
+        <input type="text" name="event">
+        <div>
+        <label for="day">日時　　　</label>
+        <input type="datetime-local" name="day">
+        </div>
+        <div class="password-container">
+            <label for="password">パスキー　</label>
+            <input type="password" name="password" id="passwordInput" placeholder="パスキーを入力">
+            <span class="toggle-password" onclick="togglePasswordVisibility()">&#x1f441;</span>
+            <input type="submit" value="登録">
+        </div>
+        <script src="{{ url_for('static', filename='js/test.js') }}"></script>
+
+    </form>
+</body>
+</html>
