@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    {% for data in datas %}
+    <p>event:{{ data.event }}  date:{{ data.day }}</p>
+    <a href="{{data.ID}}/update_to_do" role="button">更新</a>
+    <a href="{{data.ID}}/delete_to_do" role="button">削除</a>
+    {% endfor %}
+
+    <br><br><a href="{{ url_for('form_to_do') }}">追加</a><br>
+
+    <br><a href="{{ url_for('top') }}">トップページへ</a>
+
+</body>
+</html>
