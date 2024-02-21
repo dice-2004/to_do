@@ -9,7 +9,7 @@
 <body>
 
     {% for data in datas %}
-    <p>event:{{ data.event }}  date:{{ data.day }}</p>
+    <p>event:{{ data.event }}  date:{{ data.time }}</p>
     <a href="{{data.ID}}/update_to_do" role="button">更新</a>
     <a href="{{data.ID}}/delete_to_do" role="button">削除</a>
     {% endfor %}

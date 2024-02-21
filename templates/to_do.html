@@ -8,7 +8,7 @@
 </head>
 <body>
     {% for data in datas %}
-    <p>event:{{ data.event }}  date:{{ data.day }}</p>
+    <p>event:{{ data.event }}  date:{{ data.time }}</p>
 
     {% endfor %}
     <br><a href="{{ url_for('top') }}">トップページへ</a>
