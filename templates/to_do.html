@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% extends "base.html" %}
 
-</head>
-<body>
-    {% for data in datas %}
-    <p>event:{{ data.event }}  date:{{ data.time }}</p>
+{% block content %}
+{% for data in datas %}
+<p>event:{{ data.event }}  date:{{ data.time }}</p>
 
-    {% endfor %}
-    <br><a href="{{ url_for('top') }}">トップページへ</a>
+{% endfor %}
 
-</body>
-</html>
+{% endblock content %}

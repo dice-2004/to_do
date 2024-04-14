@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<form method="POST">
+    {% if error == 2 %}
+    <h1 style="color: red;">パスワードが違います</h1>
+    {% endif %}
+    <label for="username">ユーザー名</label><br>
+    <input type="text" name="username"><br><br>
+    <div class="password-container">
+    <label for="password">パスワード</label><br>
+
+    <div class="pa"><input type="password" id="password" name="password">
+
+        <span id="view">
+            <!-- 目のアイコン -->
+            <i class="fff fa-regular fa-eye"></i>
+        </span>
+    </div>
+
+    <br><input type="submit" value="Login">
+
+</div>
+</form>
+{% endblock content %}
+
+
+
+{% block js %}
+<script src="https://kit.fontawesome.com/64f12f358c.js" crossorigin="anonymous"></script>
+<script>
+    let viewicon = document.getElementById('view');
+    let inputtype = document.getElementById('password');
+
+    viewicon.addEventListener('click', function () {
+        // パスワードからテキストへ
+        if (inputtype.type === 'password') {
+            inputtype.type = 'text';
+            viewicon.innerHTML = '<i class="fff fa-regular fa-eye-slash"></i>';
+        } else {
+            // テキストからパスワードへ
+            inputtype.type = 'password';
+            viewicon.innerHTML = '<i class="fff fa-regular fa-eye"></i>';
+        }
+    });
+</script>
+{% endblock js %}
